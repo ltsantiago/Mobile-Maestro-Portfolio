@@ -1,0 +1,12 @@
+# config.yaml
+appId: com.wdiodemoapp
+flows:
+  - tests/E2E/login/auth/failure/*
+  - tests/E2E/login/auth/success/*
+  - tests/E2E/register/failure/*
+  - tests/E2E/register/success/*
+
+  # Platform Configuration
+platform:
+  android:
+    disableAnimations: true

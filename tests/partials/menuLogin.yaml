@@ -1,0 +1,8 @@
+appId: com.wdiodemoapp
+---
+
+- launchApp:
+    clearState: true
+
+- runScript: ../scripts/login.js
+- tapOn: ${output.menuLogin.btnMenuLogin}
