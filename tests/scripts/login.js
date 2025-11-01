@@ -15,10 +15,3 @@ output.elementsLogin = {
     passwordField: 'Password',
 }
 
-//Asserts
-
-output.assertsLogin = {
-    emailError: 'Please enter a valid email address',
-    passwordError: 'Please enter at least 8 characters',
-    loginSuccess: 'You are logged in!'
-}
