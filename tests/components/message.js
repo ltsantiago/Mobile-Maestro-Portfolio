@@ -1,7 +1,7 @@
 //Asserts
 
 
-output.assertsLogin = {
+output.messagesValidation = {
     emailError: 'Please enter a valid email address',
     passwordError: 'Please enter at least 8 characters',
     loginSuccess: 'You are logged in!',

@@ -1,11 +1,9 @@
-// Credencais.js
+// button
 output.doLogin = {
-    email: 'lucastiago@gmail.com',
-    password: 'showba123',
     loginBtnForm: 'button-LOGIN',
 }
 
-// login.js
+// Menu Login
 output.menuLogin = {
     btnMenuLogin: 'Login',
 }
@@ -15,3 +13,7 @@ output.elementsLogin = {
     passwordField: 'Password',
 }
 
+output.doLoginInvalid = {
+    email: 'invalidemail@',
+    password: '12345',
+}
