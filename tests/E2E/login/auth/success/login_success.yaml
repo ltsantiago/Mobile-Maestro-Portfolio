@@ -1,0 +1,21 @@
+appId: com.wdiodemoapp
+name: Login com sucesso!!!
+tags:
+  - login
+  
+jsEngine: graaljs
+
+onFlowStart:
+  - launchApp
+  - runFlow: ../../../../partials/menuLogin.yaml
+---
+- runScript: ../../../../scripts/gerarDados.js
+- runScript: ../../../../scripts/login.js
+- runScript: ../../../../components/message.js
+- tapOn: ${output.elementsLogin.emailField}
+- inputText: ${output.credentials.email}
+- tapOn: ${output.elementsLogin.passwordField}
+- inputText: ${output.credentials.password}
+- tapOn: ${output.doLogin.loginBtnForm}
+- assertVisible: ${output.messagesValidation.loginSuccess}
+

@@ -1,0 +1,19 @@
+appId: com.wdiodemoapp
+name: Login com email inválido!!!
+tags:
+  - login
+  - regression
+  
+onFlowStart:
+  - launchApp
+  - runFlow: ../../../../partials/menuLogin.yaml
+---
+- runScript: ../../../../scripts/gerarDados.js
+- runScript: ../../../../scripts/login.js
+- runScript: ../../../../components/message.js
+- tapOn: ${output.elementsLogin.emailField}
+- inputText: ${output.doLoginInvalid.email}
+- tapOn: ${output.elementsLogin.passwordField}
+- inputText: ${output.credentials.password}
+- tapOn: ${output.doLogin.loginBtnForm}
+- assertVisible: ${output.messagesValidation.emailError}

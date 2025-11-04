@@ -1,0 +1,15 @@
+appId: com.wdiodemoapp
+name: Login com campos vazios!!!
+tags:
+  - login
+  - regression
+  
+onFlowStart:
+  - launchApp
+  - runFlow: ../../../../partials/menuLogin.yaml
+---
+- runScript: ../../../../scripts/login.js
+- runScript: ../../../../components/message.js
+- tapOn: ${output.doLogin.loginBtnForm}
+- assertVisible: ${output.messagesValidation.emailError}
+- assertVisible: ${output.messagesValidation.passwordError}
