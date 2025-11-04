@@ -1,12 +1,20 @@
 # config.yaml
 appId: com.wdiodemoapp
+# testOutputDir: wdio/reports/
 flows:
-  - tests/E2E/login/auth/failure/*
-  - tests/E2E/login/auth/success/*
-  - tests/E2E/register/failure/*
-  - tests/E2E/register/success/*
+
+  - "tests/E2E/login/auth/failure/*.yaml"
+  - "tests/E2E/login/auth/success/*.yaml"
+  
+  - "tests/E2E/register/failure/*.yaml"
+  - "tests/E2E/register/success/*.yaml"
 
   # Platform Configuration
 platform:
   android:
     disableAnimations: true
+
+# Configuração geral da execução
+executionOrder:
+  continueOnFailure: true
+
