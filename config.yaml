@@ -13,8 +13,3 @@ flows:
 platform:
   android:
     disableAnimations: true
-
-# Configuração geral da execução
-executionOrder:
-  continueOnFailure: true
-

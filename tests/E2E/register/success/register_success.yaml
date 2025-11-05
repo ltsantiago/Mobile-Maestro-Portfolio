@@ -1,0 +1,20 @@
+appId: com.wdiodemoapp
+name: Deve registrar com sucesso!!!
+onFlowStart:
+  - launchApp
+  - runFlow: ../../../partials/menuLogin.yaml
+---
+- tapOn:
+    text: Sign up
+- runScript: ../../../scripts/register.js
+- runScript: ../../../scripts/gerarDados.js
+- tapOn: ${output.elements.emailField}
+- inputText: ${output.credentials.email}
+- tapOn: ${output.elements.passwordField}
+- inputText: ${output.doRegister.password}
+- tapOn: ${output.elements.passwordConfirmField}
+- inputText: ${output.doRegister.confirmPassword}
+- tapOn: ${output.doRegister.btnSignUpForm}
+- runScript: ../../../components/message.js
+- assertVisible: ${output.messagesValidation.registerSuccess}
+

@@ -1,0 +1,38 @@
+appId: com.wdiodemoapp
+name: Deve Validar o Swipe!!!
+---
+- launchApp:
+    clearState: true
+
+- tapOn: Swipe
+
+- swipe:
+   from: 
+    id: "__CAROUSEL_ITEM_0_READY__" # From (x, y) center of element
+   direction: LEFT # To (50% of width, 10% of height)
+- swipe:
+   from: 
+    id: "__CAROUSEL_ITEM_1_READY__" # From (x, y) center of element
+   direction: LEFT # To (50% of width, 10% of height)
+
+- swipe:
+   from: 
+    id: "__CAROUSEL_ITEM_2_READY__" # From (x, y) center of element
+   direction: LEFT # To (50% of width, 10% of height)
+
+- swipe:
+   from: 
+    id: "__CAROUSEL_ITEM_3_READY__" # From (x, y) center of element
+   direction: LEFT # To (50% of width, 10% of height)
+
+- swipe:
+   from: 
+    id: "__CAROUSEL_ITEM_4_READY__" # From (x, y) center of element
+   direction: LEFT # To (50% of width, 10% of height)
+
+- swipe:
+   from: 
+    id: "__CAROUSEL_ITEM_5_READY__" # From (x, y) center of element
+   direction: LEFT # To (50% of width, 10% of height)
+   
+- assertVisible: "WebdriverIO works in combination with most of the TDD and BDD test frameworks in the JavaScript world"
