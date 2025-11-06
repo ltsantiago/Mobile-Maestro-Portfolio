@@ -9,6 +9,8 @@ flows:
   - "tests/E2E/register/failure/*.yaml"
   - "tests/E2E/register/success/*.yaml"
 
+  - "tests/E2E/Swipe/*.yaml"
+
   # Platform Configuration
 platform:
   android:
