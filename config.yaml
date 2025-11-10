@@ -2,6 +2,8 @@
 appId: com.wdiodemoapp
 # testOutputDir: wdio/reports/
 flows:
+
+  - "**"
   - login/failure/*
   - login/success/*
   - register/failure/*
