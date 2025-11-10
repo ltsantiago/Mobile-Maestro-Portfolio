@@ -2,14 +2,14 @@
 appId: com.wdiodemoapp
 # testOutputDir: wdio/reports/
 flows:
+  - login/failure/*
+  - login/success/*
+  - register/failure/*
+  - register/success/*
+  - swipe/*
 
-  - "./maestro/tests/E2E/login/auth/failure/*.yaml"
-  - "./maestro/tests/E2E/login/auth/success/*.yaml"
-  
-  - "./maestro/tests/E2E/register/failure/*.yaml"
-  - "./maestro/tests/E2E/register/success/*.yaml"
 
-  - "./maestro/tests/E2E/Swipe/*.yaml"
+ 
 
   # Platform Configuration
 platform:
