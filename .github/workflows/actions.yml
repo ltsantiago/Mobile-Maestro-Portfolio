@@ -16,9 +16,6 @@ jobs:
           java-version: 11
           distribution: 'temurin'
 
-      # - name: Build APK
-      #   run: ./gradlew assembleDebug
-
       - name: Run Maestro Cloud Tests
         id: maestro
         uses: mobile-dev-inc/action-maestro-cloud@v1
