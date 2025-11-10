@@ -6,10 +6,10 @@ tags:
   
 onFlowStart:
   - launchApp
-  - runFlow: ../../partials/menuLogin.yaml
+  - runFlow: ../partials/menuLogin.yaml
 ---
-- runScript: ../../scripts/login.js
-- runScript: ../../components/message.js
+- runScript: ../scripts/login.js
+- runScript: ../components/message.js
 - tapOn: ${output.doLogin.loginBtnForm}
 - assertVisible: ${output.messagesValidation.emailError}
 - assertVisible: ${output.messagesValidation.passwordError}

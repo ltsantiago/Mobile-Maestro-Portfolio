@@ -6,11 +6,11 @@ tags:
   
 onFlowStart:
   - launchApp
-  - runFlow: ../../partials/menuLogin.yaml
+  - runFlow: ../partials/menuLogin.yaml
 ---
-- runScript: ../../scripts/login.js
-- runScript: ../../scripts/gerarDados.js
-- runScript: ../../components/message.js
+- runScript: ../scripts/login.js
+- runScript: ../scripts/gerarDados.js
+- runScript: ../components/message.js
 - tapOn: ${output.elementsLogin.passwordField}
 - inputText: ${output.credentials.password}
 - tapOn: ${output.doLogin.loginBtnForm}
