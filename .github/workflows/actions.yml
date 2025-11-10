@@ -16,8 +16,8 @@ jobs:
           java-version: 11
           distribution: 'temurin'
 
-      - name: Build APK
-        run: ./gradlew assembleDebug
+      # - name: Build APK
+      #   run: ./gradlew assembleDebug
 
       - name: Run Maestro Cloud Tests
         id: maestro
