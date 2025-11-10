@@ -27,6 +27,8 @@ jobs:
           project-id: ${{ secrets.MAESTRO_PROJECT_ID }}
           app-file: wdio/android.wdio.native.app.v1.0.8.apk
 
+          
+
       # ENVIAR NOTIFICAÇÃO PARA O SLACK
 
       - name: Send Slack Notification
