@@ -3,15 +3,10 @@ appId: com.wdiodemoapp
 # testOutputDir: wdio/reports/
 flows:
 
-  - "**"
-  - login/failure/*
-  - login/success/*
-  - register/failure/*
-  - register/success/*
+  - login/*
+  - register/*
   - swipe/*
 
-
- 
 
   # Platform Configuration
 platform:
