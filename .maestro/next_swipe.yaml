@@ -8,5 +8,5 @@ onFlowStart:
   - launchApp
 ---
 - tapOn: Swipe
-- runFlow: ../partials/nextSwipe.yaml
+- runFlow: partials/nextSwipe.yaml
 - assertVisible: "WebdriverIO works in combination with most of the TDD and BDD test frameworks in the JavaScript world"

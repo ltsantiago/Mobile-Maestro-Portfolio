@@ -2,14 +2,14 @@ appId: com.wdiodemoapp
 name: Registro com campos vazios!!!
 onFlowStart:
   - launchApp
-  - runFlow: ../partials/menuLogin.yaml
+  - runFlow: partials/menuLogin.yaml
 ---
 - tapOn:
     text: Sign up
-- runScript: ../scripts/register.js
+- runScript: scripts/register.js
 - tapOn: 
     text: ${output.doRegister.btnSignUpForm}
-- runScript: ../components/message.js
+- runScript: components/message.js
 - assertVisible: ${output.messagesValidation.emailError}
 - assertVisible: ${output.messagesValidation.passwordError}
 - assertVisible: ${output.messagesValidation.confirmPasswordError}

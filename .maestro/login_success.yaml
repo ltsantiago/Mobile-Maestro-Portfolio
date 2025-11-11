@@ -7,11 +7,11 @@ jsEngine: graaljs
 
 onFlowStart:
   - launchApp
-  - runFlow: ../partials/menuLogin.yaml
+  - runFlow: partials/menuLogin.yaml
 ---
-- runScript: ../scripts/gerarDados.js
-- runScript: ../scripts/login.js
-- runScript: ../components/message.js
+- runScript: scripts/gerarDados.js
+- runScript: scripts/login.js
+- runScript: components/message.js
 - tapOn: ${output.elementsLogin.emailField}
 - inputText: ${output.credentials.email}
 - tapOn: ${output.elementsLogin.passwordField}
