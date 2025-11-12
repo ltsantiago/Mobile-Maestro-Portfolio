@@ -25,12 +25,6 @@ jobs:
           app-file: android.wdio.native.app.v1.0.8.apk
           workspace: '.maestro/'
 
-      - name: Parse maestro tests and send results to slack
-        id: test-results
-        uses: brett-james-rocketlab/maestro-test-results-to-slack@main
-        env:
-          SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
 
       - name: Slack Notification - Success
         uses: rtCamp/action-slack-notify@v2
