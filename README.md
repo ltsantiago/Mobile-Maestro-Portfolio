@@ -15,7 +15,6 @@ Bem-vindo ao meu projeto de automação de testes mobile utilizando Maestro, des
 - **Versionamento**: Git
 
 
-## 🛠️ Funcionamento dos Testes
 
 
 
