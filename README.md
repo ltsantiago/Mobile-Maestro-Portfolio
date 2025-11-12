@@ -1,6 +1,5 @@
 # 🚀 Automação de Testes Mobile com Maestro
 
-[![CI/CD](https://github.com/seu-usuario/wdio/actions/workflows/actions.yml/badge.svg)](https://github.com/seu-usuario/wdio/actions)
 [![Maestro](https://img.shields.io/badge/Maestro-2.0.0-blue)](https://maestro.mobile.dev/)
 [![Slack](https://img.shields.io/badge/Slack-Notificações-4A154B?logo=slack)](https://slack.com/)
 
@@ -12,22 +11,10 @@ Bem-vindo ao meu projeto de automação de testes mobile utilizando Maestro, des
 - **Linguagem**: YAML para escrita dos testes
 - **Padrão de Projeto**: Page Object Model (POM)
 - **CI/CD**: GitHub Actions
-- **Monitoramento**: Notificações no Slack
+- **Monitoramento**: Notificações no Slack | Maestro Cloud
 - **Versionamento**: Git
 
-## 🏗️ Estrutura do Projeto
 
-```
-├── .github/
-│   └── workflows/
-│       └── actions.yml      # Configuração do CI/CD
-├── .maestro/               # Testes em Maestro
-│   ├── login/
-│   ├── register/
-│   └── swipe/
-├── config.yaml             # Configuração do Maestro
-└── android.wdio.native.app.v1.0.8.apk  # APK para testes
-```
 
 ## 🚀 Como Executar o Projeto
 
@@ -56,10 +43,10 @@ Bem-vindo ao meu projeto de automação de testes mobile utilizando Maestro, des
 
 ```bash
 # Executar todos os testes
-maestro test .
+maestro test .maestro
 
 # Executar testes específicos (ex: login)
-maestro test .maestro/login/
+ maestro test login_success.yaml 
 ```
 
 ## 🔄 CI/CD com GitHub Actions
@@ -111,4 +98,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ---
 
-Desenvolvido com ❤️ por [Seu Nome](https://github.com/seu-usuario) - Conecte-se comigo no [LinkedIn](https://linkedin.com/in/seu-perfil)
+Desenvolvido com ❤️ por [Seu Nome](https://github.com/ltsantiago) - Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/lucas-tiago/)
