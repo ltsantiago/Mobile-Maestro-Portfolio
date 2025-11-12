@@ -15,6 +15,10 @@ Bem-vindo ao meu projeto de automação de testes mobile utilizando Maestro, des
 - **Versionamento**: Git
 
 
+## 🛠️ Funcionamento dos Testes
+
+
+
 
 ## 🚀 Como Executar o Projeto
 
@@ -98,4 +102,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ---
 
-Desenvolvido com ❤️ por [Seu Nome](https://github.com/ltsantiago) - Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/lucas-tiago/)
+Desenvolvido com ❤️ por [Lucas Tiago](https://github.com/ltsantiago) - Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/lucas-tiago/)
