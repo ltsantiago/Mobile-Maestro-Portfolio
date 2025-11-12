@@ -1,119 +1,114 @@
-# Mobile Test Automation with Maestro
+# 🚀 Automação de Testes Mobile com Maestro
 
-Este projeto implementa testes de automação mobile para aplicativo WDIO em Android utilizando o Maestro, uma ferramenta poderosa para testes de interface do usuário. O foco principal é em fluxos de autenticação (login/registro) com diferentes cenários de teste.
+[![CI/CD](https://github.com/seu-usuario/wdio/actions/workflows/actions.yml/badge.svg)](https://github.com/seu-usuario/wdio/actions)
+[![Maestro](https://img.shields.io/badge/Maestro-2.0.0-blue)](https://maestro.mobile.dev/)
+[![Slack](https://img.shields.io/badge/Slack-Notificações-4A154B?logo=slack)](https://slack.com/)
 
-## 🚀 Tecnologias Utilizadas
+Bem-vindo ao meu projeto de automação de testes mobile utilizando Maestro, desenvolvido como parte do meu portfólio profissional. Este projeto demonstra minhas habilidades em automação de testes mobile, implementando boas práticas e padrões de desenvolvimento.
 
-- **Maestro**: Framework de automação mobile moderno e intuitivo
-- **YAML**: Linguagem de configuração para definição dos fluxos de teste
-- **JavaScript**: Para scripts personalizados e lógica de teste
-- **Page Objects Pattern**: Organização de elementos e fluxos em estruturas reutilizáveis
-- **Git**: Controle de versão do código-fonte
+## 🛠️ Tecnologias e Ferramentas
 
-## 📋 Estrutura do Projeto
+- **Framework de Testes**: Maestro
+- **Linguagem**: YAML para escrita dos testes
+- **Padrão de Projeto**: Page Object Model (POM)
+- **CI/CD**: GitHub Actions
+- **Monitoramento**: Notificações no Slack
+- **Versionamento**: Git
+
+## 🏗️ Estrutura do Projeto
 
 ```
-wdio/
-├── config.yaml           # Configurações globais do Maestro
-├── scripts/             # Scripts JavaScript personalizados
-├── tests/
-│   └── E2E/
-│       ├── login/       # Testes de login
-│       │   ├── auth/
-│       │   │   ├── failure/  # Cenários de falha no login
-│       │   │   └── success/  # Cenários de sucesso no login
-│       └── register/    # Testes de registro
-│           ├── failure/ # Cenários de falha no registro
-│           └── success/ # Cenários de sucesso no registro
-└── partials/            # Componentes reutilizáveis
+├── .github/
+│   └── workflows/
+│       └── actions.yml      # Configuração do CI/CD
+├── .maestro/               # Testes em Maestro
+│   ├── login/
+│   ├── register/
+│   └── swipe/
+├── config.yaml             # Configuração do Maestro
+└── android.wdio.native.app.v1.0.8.apk  # APK para testes
 ```
 
-## 🛠️ Pré-requisitos
+## 🚀 Como Executar o Projeto
 
-- Node.js (versão 14 ou superior)
-- Maestro CLI instalado globalmente
-- Android Studio (para emuladores Android)
-- Java Development Kit (JDK) 11 ou superior
-- Variáveis de ambiente configuradas (ANDROID_HOME, JAVA_HOME)
+### Pré-requisitos
 
-## ⬇️ Instalação
+- Node.js (versão 14+)
+- Java JDK 11+
+- Android Studio com Android SDK
+- Maestro CLI instalado
+- Dispositivo Android físico ou emulador
 
-1. **Clone o repositório**
-   ```bash
-   git clone [URL_DO_SEU_REPOSITÓRIO]
-   cd wdio
-   ```
+### Instalação
 
-2. **Instale o Maestro CLI**
+1. **Instale o Maestro CLI**
    ```bash
    curl -Ls "https://get.maestro.mobile.dev" | bash
    ```
-   
-   Ou via npm:
+
+2. **Clone o repositório**
    ```bash
-   npm install -g @maestro/cli
+   git clone https://github.com/seu-usuario/wdio.git
+   cd wdio
    ```
 
-3. **Verifique a instalação**
-   ```bash
-   maestro --version
-   ```
+### Executando os Testes Localmente
 
-## 🚀 Como Executar os Testes
+```bash
+# Executar todos os testes
+maestro test .
 
-1. **Inicie o emulador Android** ou conecte um dispositivo físico com depuração USB ativada
+# Executar testes específicos (ex: login)
+maestro test .maestro/login/
+```
 
-2. **Instale o aplicativo de teste** (se ainda não estiver instalado)
-   ```bash
-   adb install caminho/para/seu/app.apk
-   ```
+## 🔄 CI/CD com GitHub Actions
 
-3. **Execute todos os testes**
-   ```bash
-   maestro test
-   ```
+O projeto está configurado com GitHub Actions para execução automática de testes a cada push para a branch `main`. O fluxo de CI/CD inclui:
 
-4. **Execute um fluxo específico**
-   ```bash
-   maestro test tests/E2E/login/auth/success/login_success.yaml
-   ```
+1. Build e execução dos testes no Maestro Cloud
+2. Geração de relatórios de cobertura
+3. Notificações no Slack com os resultados
 
-5. **Gere relatório de testes**
-   ```bash
-   maestro test --format junit --output results.xml
-   ```
+### Configuração de Variáveis de Ambiente
 
-## 🏗️ Boas Práticas Implementadas
+Para configurar o ambiente, você precisará definir os seguintes segredos no GitHub:
+- `MAESTRO_API_KEY`
+- `MAESTRO_PROJECT_ID`
+- `SLACK_CHANNEL`
+- `SLACK_TOKEN`
+- `SLACK_WEBHOOK_URL`
 
-- **Organização por Funcionalidade**: Testes agrupados por funcionalidade (login, registro)
-- **Separação de Cenários**: Cenários de sucesso e falha em pastas separadas
-- **Reutilização de Código**: Uso de partials para componentes compartilhados
-- **Dados de Teste**: Separação de dados de teste da lógica de teste
-- **Nomenclatura Clara**: Nomes descritivos para arquivos e variáveis
-- **Documentação**: README detalhado para facilitar a configuração e execução
+## 🏗️ Padrão Page Object Model (POM)
 
-## 📝 Convenções de Código
+O projeto implementa o padrão POM para melhor organização e manutenção dos testes:
 
-- Use YAML com indentação de 2 espaços
-- Nomes de arquivos em snake_case
-- Comentários em inglês para documentação
-- Variáveis com nomes descritivos
-- Separação clara entre configuração e execução
+- **Páginas**: Cada tela do aplicativo é representada por uma classe de página
+- **Componentes**: Elementos de UI reutilizáveis são armazenados separadamente
+- **Fluxos**: Os fluxos de usuário são escritos de forma limpa e legível
+
+## 📊 Relatórios
+
+Os resultados dos testes são enviados para o Slack, incluindo:
+- Status de cada caso de teste
+- Screenshots em caso de falhas
+- Estatísticas de execução
 
 ## 🤝 Contribuição
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nome-branch`)
-3. Commit suas mudanças (`git commit -m 'Add some nome-branch'`)
-4. Dê push para a branch (`git push origin feature/nome-branch`)
-5. Abra um Pull Request
+Contribuições são bem-vindas! Siga estes passos:
+
+1. Faça um Fork do projeto
+2. Crie uma Branch para sua Feature (`git checkout -b feature/AmazingFeature`)
+3. Adicione suas mudanças (`git add .`)
+4. Comite suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+5. Faça o Push da Branch (`git push origin feature/AmazingFeature`)
+6. Abra um Pull Request
 
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## ✉️ Contato
+---
 
-Seu Nome - Lucas Tiago ltsantiago88@gmail.com
-
-Link do Projeto: [https://github.com/ltsantiago/Projeto-Mobile-Wdio-Maestro](https://github.com/ltsantiago/Projeto-Mobile-Wdio-Maestro)
+Desenvolvido com ❤️ por [Seu Nome](https://github.com/seu-usuario) - Conecte-se comigo no [LinkedIn](https://linkedin.com/in/seu-perfil)

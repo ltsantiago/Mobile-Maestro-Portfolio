@@ -32,16 +32,29 @@ jobs:
           SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
 
-      - name: Send Slack Notification
-        if: always()
-        run: |
-          STATUS="${{ steps.maestro.outcome }}"
-          if [ "$STATUS" == "success" ]; then
-            MESSAGE="✅ Testes finalizados com sucesso no Maestro Cloud!"
-          else
-            MESSAGE="❌ Falha ao executar testes no Maestro Cloud!"
-          fi
+      - name: Slack Notification - Success
+        uses: rtCamp/action-slack-notify@v2
+        if: ${{ success() }}
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_CHANNEL: tests-e2e
+          SLACK_COLOR	: ${{job.status}}
+          SLACK_ICON: https://www.clipartmax.com/png/middle/179-1795386_patient-success-success-icon-png.png
+          SLACK MESSAGE: 'Testes realizados com sucesso :white_check_mark:'
+          SLACK TITLE: 'Testes realizados com sucesso :white_check_mark:'
+          SLACK USERNAME: SUCESSO
 
-          curl -X POST -H 'Content-type: application/json' \
-          --data "{\"text\": \"$MESSAGE\"}" \
-          ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Slack Notification - Failure
+        uses: rtCamp/action-slack-notify@v2
+        if: ${{ failure() }}
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_CHANNEL: tests-e2e
+          SLACK_COLOR	: ${{job.status}}
+          SLACK_ICON: https://png.pngtree.com/png-clipart/20220119/ourmid/pngtree-cartoon-hand-drawn-error-icon-png-image_4235046.png
+          SLACK MESSAGE: 'Erro ao executar os testes! :fire:'
+          SLACK TITLE: 'Erro ao executar os testes! :fire:'
+          SLACK USERNAME: ERRO
+     
+     
